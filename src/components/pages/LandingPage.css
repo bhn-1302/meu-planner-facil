@@ -1,0 +1,36 @@
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f9fafc, #dce3f0);
+    color: #333;
+    text-align: center;
+}
+
+.landing-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.landing-page p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.btn-entrar {
+    padding: 0.8rem 2rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-entrar:hover{
+    background-color: #3730a3;
+}

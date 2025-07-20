@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
+import { FaTrash, FaSun, FaMoon, FaHeart } from 'react-icons/fa';
 import './App.css'
+import LandingPage from './components/pages/LandingPage';
+import Planner from './components/pages/Planner';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [tarefas, setTarefas] = useState(() => {
@@ -50,9 +54,13 @@ function App() {
   }, [tarefas])
 
   return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<LandingPage />}/>
+        <Route exact path='/planner' element={
     <div className={`container ${modoEscuro ? 'escuro' : ''}`}>
 
-        <button className='toggle-tema' onClick={() => setModoEscuro(!modoEscuro)}>{modoEscuro ? '☀️ Modo Claro' : '🌙 Modo Escuro'}</button>
+        <button className='toggle-tema' onClick={() => setModoEscuro(!modoEscuro)}>{modoEscuro ? <FaSun /> : <FaMoon />}</button>
 
       <h1>Meu Planner Fácil 📝</h1>
 
@@ -62,7 +70,7 @@ function App() {
       </div>
 
       <div className='pix-doacao'>
-         <button onClick={() => setMostrarPix(true)}>💖 Apoie este projeto</button> 
+         <button onClick={() => setMostrarPix(true)}> <FaHeart style={{ marginRight: '6px' }} /> Apoie este projeto</button> 
       </div>
 
       {
@@ -83,11 +91,14 @@ function App() {
         {tarefas.map((tarefa) => (
           <li key={tarefa.id} className={tarefa.feita ? 'feita' : ''}>
             <span onClick={() => alternarTarefa(tarefa.id)}>{tarefa.texto}</span>
-            <button onClick={() => removerTarefa(tarefa.id)}>🗑️</button>
+            <button onClick={() => removerTarefa(tarefa.id)}><FaTrash /></button>
           </li>
         ))}
       </ul>
     </div>
+    }/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

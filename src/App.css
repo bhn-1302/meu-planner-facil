@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
@@ -144,4 +144,18 @@ button:hover {
 .container.escuro .modal-conteudo{
   background-color: #2e2e2e;
   color: white;
+}
+
+@media (max-width: 500px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .form input, .form button {
+    width: 100%;
+  }
+
+  .modal-conteudo {
+    width: 90%;
+  }
 }
